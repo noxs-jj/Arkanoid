@@ -36,6 +36,11 @@ $(NAME): $(LIB) glfw $(OBJS)
 glfw:
 	sh install.sh
 
+rend:
+	$(CC) $(CFLAGS) src/render/*.c libft/libft.a \
+	-I glfw/include/ -I libft/ -L glfw/src/ \
+	-lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
+
 clean:
 	make clean -C libft
 	rm -rf $(OBJS)
