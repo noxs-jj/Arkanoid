@@ -5,26 +5,17 @@ CC = $(CLANG)
 HEADER = includes/HEADER
 
 # change binary name
-NAME = BINARY_NAME
+NAME = Arkanoid
 
 # add sources files
 SRCS =	src/main.c \
 	src/basic_functions.c \
 	src/init_start.c \
-	src/render_mlx/mlx_pointer_hook.c \
-	src/render_mlx/mlx_pixel_image.c \
-	src/render_mlx/render_scene.c \
-	src/render_mlx/render_set_color.c \
-	src/render_mlx/render_key_bind.c
-
-# minilibx <> can be REMOVE
-MLX = minilibx/libmlx.a
-MLX_L = minilibx/libmlx_Linux.a
 
 # Don'y modify following
 GCC = gcc
 CLANG = clang
-CFLAGS = -Wall -Werror -Wextra -pedantic -o3
+CFLAGS = -Wall -Werror -Wextra
 LIB = libft/libft.a
 OBJS = $(SRCS:.c=.o)
 
@@ -40,7 +31,7 @@ $(MLX):
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(LIB) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB) $(MLX) $(MLX_L) -L x11 -lXext -lX11
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB)
 
 glfw:
 	cmake glfw
