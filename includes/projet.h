@@ -1,6 +1,7 @@
 #ifndef PROJET_H
 # define PROJET_H
 
+# include "../glfw/include/GLFW/glfw3.h"
 # include "../libft/includes/libft.h"
 
 # define LOG_PATH	"logs/debugg.log"
@@ -18,7 +19,7 @@
 
 typedef struct	s_case
 {
-	int			type;
+	char		type;
 	int			state;
 }				t_case;
 

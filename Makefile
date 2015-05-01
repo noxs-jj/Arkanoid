@@ -14,7 +14,14 @@ SRCS =	src/main.c \
 	src/init_map.c \
 	src/fill_map.c \
 	src/get_level_file.c \
-	move.c
+	src/move.c \
+	src/render/render_close.c \
+	src/render/render_draw.c \
+	src/render/render_draw_case.c \
+	src/render/render_draw_player.c \
+	src/render/render_draw_wall.c \
+	src/render/render_init_.c \
+	src/render/render_keyboard.c
 
 # Don'y modify following
 GCC = gcc
@@ -28,14 +35,15 @@ all: $(NAME)
 $(LIB):
 	make -C libft
 
-$(MLX):
-	make -C minilibx
-
 %.o: %.c $(HEADER)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I glfw/include/ -I libft/ -c $< -o $@
 
 $(NAME): $(LIB) glfw $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB) \
+	-I glfw/include/ -I libft/ \
+	-L glfw/src/ \
+	-lglfw3 -framework Cocoa -framework OpenGL \
+	-framework IOKit -framework CoreVideo
 
 glfw:
 	sh install.sh

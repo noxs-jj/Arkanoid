@@ -29,12 +29,10 @@ void render_draw(t_data *d)
 		{
 			if (d->map[y][x]->type == OBSTACLE)
 				render_draw_case(d, 15, x * WIN_WIDHT, y * WIN_HEIGHT);
-			else if (d->map[y][x]->type == simple)
-				render_draw_case(d, , x * WIN_WIDHT, y * WIN_HEIGHT);
+			else if (d->map[y][x]->type == SIMPLE)
+				render_draw_case(d, 0, x * WIN_WIDHT, y * WIN_HEIGHT);
 			else if (d->map[y][x]->type == SPEC)
 				render_draw_case(d, d->map[y][x]->state, x * WIN_WIDHT, y * WIN_HEIGHT);
-			else if (d->map[y][x]->type == OBSTACLE)
-				render_draw_case(d, 0, x * WIN_WIDHT, y * WIN_HEIGHT);
 			else if (d->map[y][x]->type == PLAYER)
 			{
 				render_draw_player(d, x * WIN_WIDHT, y * WIN_HEIGHT);
