@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_start.c                                       :+:      :+:    :+:   */
+/*   get_level_file.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/01 20:41:29 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/01 23:08:47 by vjacquie         ###   ########.fr       */
+/*   Created: 2015/05/01 22:30:26 by vjacquie          #+#    #+#             */
+/*   Updated: 2015/05/01 23:05:13 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../includes/projet.h"
 
-int	init_start(t_data **d, int ac, char **av)
+int		get_level_file(t_data *d)
 {
-	(void)ac;
-	(void)av;
-	if (ac < 2)
-		return(error("init_start:: Require 2 args minimum"));
-	*d = get_data();
-	if (NULL == d)
-		return (error("init_start:: t_data init is NULL, malloc failed"));
-	if (open_log(*d) < 0)
-		return (error("init_start:: Open_log error"));
-	(*d)->level = 1;
-	(*d)->fd_level = -1;
-	if (init_map(*d) < 0)
-		return (error("init_start:: Init_map error"));
+	// char *tmp;
+
+	// if ((tmp = ft_strnew(8)) == NULL)
+	// 	return (-1);
+	// ft_strcpy(tmp, "level");
+
+	if ((d->fd_level = open("levels/level01.level", O_RDONLY)) < 0)
+		return (-1);
 	return (0);
 }
