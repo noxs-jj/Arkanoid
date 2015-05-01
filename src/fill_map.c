@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:27:24 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/01 23:22:39 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/01 23:47:57 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static int	fill_map2(t_data *d, char *line, int x, int y)
 {
 	if (line[x] == WALL)
-		d->map[y][x].type = 1;
+		d->map[y][x].type = WALL;
 	else if (line[x] == SIMPLE)
 	{
-		d->map[y][x].type = 2;
+		d->map[y][x].type = SIMPLE;
 		d->map[y][x].state = 1;
 	}
 	else if (line[x] == OBSTACLE)
-		d->map[y][x].type = 3;
+		d->map[y][x].type = OBSTACLE;
 	else if (line[x] >= '1' && line[x] <= '9')
 	{
-		d->map[y][x].type = 4;
+		d->map[y][x].type = SPEC;
 		d->map[y][x].state = line[x] - '0';
 	}
 	else if (line[x] == EMPTY)
-		d->map[y][x].type = 5;
+		d->map[y][x].type = EMPTY;
 	else
 		return (-1);
 	if ((x == 0 || x == MAP_X -1 || y == 0 || y == MAP_Y - 1)

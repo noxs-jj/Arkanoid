@@ -12,12 +12,13 @@
 # define OBSTACLE '@'	// type 3
 # define EMPTY ' '		// type 5
 # define PLAYER '_'		// type 6
+# define SPEC	'0'
 # define LEFT 1
 # define RIGHT 2
 
 typedef struct s_case
 {
-	int 		type;
+	char 		type;
 	int 		state;
 }				t_case;
 
