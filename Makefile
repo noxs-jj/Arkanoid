@@ -11,6 +11,9 @@ NAME = Arkanoid
 SRCS =	src/main.c \
 	src/basic_functions.c \
 	src/init_start.c \
+	src/init_map.c \
+	src/fill_map.c \
+	src/get_level_file.c
 
 # Don'y modify following
 GCC = gcc
