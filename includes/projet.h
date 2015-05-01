@@ -21,6 +21,20 @@ typedef struct	s_case
 	int			type;
 	int			state;
 }				t_case;
+/*
+** dir value
+**	7	0	1
+
+**	6	*	2
+**
+**	5	4	3
+*/
+typedef struct s_ball
+{
+	int posx;
+	int posy;
+	int dir;
+};
 
 // MUST HAVE THIS, don't remote it
 typedef struct		s_data
