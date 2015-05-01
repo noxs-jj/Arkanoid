@@ -6,7 +6,7 @@ int	init_start(t_data **d, int ac, char **av)
 	(void)av;
 	if (ac < 2)
 		return(error("init_start:: Require 2 args minimum"));
-	*d = getData();
+	*d = get_data();
 	if (NULL == d)
 		return (error("init_start:: t_data init is NULL, malloc failed"));
 	if (open_log(*d) < 0)
