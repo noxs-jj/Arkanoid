@@ -16,10 +16,10 @@
 # define LEFT 1
 # define RIGHT 2
 
-typedef struct s_case
+typedef struct	s_case
 {
-	char 		type;
-	int 		state;
+	int			type;
+	int			state;
 }				t_case;
 
 // MUST HAVE THIS, don't remote it
@@ -28,13 +28,14 @@ typedef struct		s_data
 
 	int				fd_log;
 	int				i_args;
-	int 			fd_level;
-	int 			level;
+	int				fd_level;
+	int				level;
 	t_case			**map;
 	int 			player_pos;
 
 	// DEBUGG for dev can be bonus
 	unsigned short int	op_log;
+
 
 	GLFWwindow		*windows;
 }					t_data;
