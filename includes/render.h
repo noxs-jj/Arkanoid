@@ -13,10 +13,8 @@
 #ifndef RENDER_H
 # define RENDER_H
 
-# include <GLFW/glfw3.h>
+# include <include/projet.h>
 # include <includes/libft.h>
-# include <stdlib.h>
-# include <stdio.h>
 
 # define WIN_WIDHT		1250
 # define WIN_HEIGHT		540

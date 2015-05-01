@@ -14,17 +14,19 @@
 
 void	render_draw_case(t_data *d, int life, int posx, int posy)
 {
-	if (type == 1)
-		glColor3ub(137, 20, 237);
+	if (type == 0)
+		glColor3ub(137, 0, 237);
 	else if (type == 2)
-		glColor3ub(137, 50, 237);
+		glColor3ub(137, 30, 237);
 	else if (type == 3)
-		glColor3ub(137, 80, 237);
+		glColor3ub(137, 60, 237);
 	else if (type == 4)
-		glColor3ub(137, 110, 237);
+		glColor3ub(137, 90, 237);
 	else if (type == 5)
-		glColor3ub(137, 140, 237);
-	else if (type == 10)
+		glColor3ub(137, 120, 237);
+	else if (type == 6)
+		glColor3ub(137, 150, 237);
+	else if (type == 15)
 		glColor3ub(0, 255, 255);
 	else
 		glColor3ub(255, 255, 255);
