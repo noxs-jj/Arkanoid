@@ -13,7 +13,8 @@ SRCS =	src/main.c \
 	src/init_start.c \
 	src/init_map.c \
 	src/fill_map.c \
-	src/get_level_file.c
+	src/get_level_file.c \
+	move.c
 
 # Don'y modify following
 GCC = gcc

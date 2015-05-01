@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:14:04 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/01 23:06:49 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/01 23:48:08 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,10 @@ int		init_map(t_data *d)
 			return (-1);
 		y++;
 	}
-	return (fill_map(d));
+	if (fill_map(d) < 0)
+		return (-1);
+	d->map[MAP_Y - 1][d->player_pos - 1].type = PLAYER;
+	d->map[MAP_Y - 1][d->player_pos].type = PLAYER;
+	d->map[MAP_Y - 1][d->player_pos + 1].type = PLAYER;
+	return (0);
 }
