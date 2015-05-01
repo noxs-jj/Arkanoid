@@ -41,7 +41,7 @@ glfw:
 	sh install.sh
 
 rend:
-	$(CC) $(CFLAGS) src/render/*.c libft/libft.a \
+	$(CC) $(CFLAGS) src/render/main_test.c libft/libft.a \
 	-I glfw/include/ -I libft/ -L glfw/src/ \
 	-lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
 

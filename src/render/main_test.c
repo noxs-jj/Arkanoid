@@ -14,6 +14,7 @@
 #include <includes/libft.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
@@ -64,6 +65,8 @@ int	main(void)
 
         glfwSwapBuffers(window);
         glfwPollEvents();
+        ft_putendl("debugg 1");
+        usleep(900000);
     }
 
 	glfwDestroyWindow(window);

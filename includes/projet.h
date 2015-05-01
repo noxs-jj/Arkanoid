@@ -35,6 +35,8 @@ typedef struct		s_data
 
 	// DEBUGG for dev can be bonus
 	unsigned short int	op_log;
+
+	GLFWwindow		*windows;
 }					t_data;
 
 int					error(char const *str);
