@@ -30,13 +30,11 @@ $(MLX):
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(LIB) $(OBJS)
+$(NAME): $(LIB) glfw $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB)
 
 glfw:
-	cmake glfw
-	make -C glfw
-
+	sh install.sh
 
 clean:
 	make clean -C libft
@@ -44,6 +42,10 @@ clean:
 
 fclean: clean
 	make fclean -C libft
+	git submodule deinit -f glfw
+	rm -rf glfw
+	rm -rf .gitmodules
+	git rm --cached -f glfw
 	rm -rf $(NAME)
 
 re: fclean all
