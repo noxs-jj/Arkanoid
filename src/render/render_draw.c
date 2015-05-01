@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_draw.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmoiroux <jmoiroux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:39:03 by jmoiroux          #+#    #+#             */
-/*   Updated: 2015/05/01 22:39:04 by jmoiroux         ###   ########.fr       */
+/*   Updated: 2015/05/02 00:22:47 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void render_draw(t_data *d)
 	int y;
 	int player;
 
-	glClear(GL_COLOR_BUFFER_BIT);
 	render_draw_wall(d, 0, 0);
 	y = 0;
 	player = 0;
@@ -42,5 +41,4 @@ void render_draw(t_data *d)
 		}
 		y++;
 	}
-	glfwSwapBuffers(d->window);
 }

@@ -3,6 +3,7 @@
 
 # include "../glfw/include/GLFW/glfw3.h"
 # include "../libft/includes/libft.h"
+# include "render.h"
 
 # define LOG_PATH	"logs/debugg.log"
 # define MAP_X 50
@@ -14,6 +15,7 @@
 # define EMPTY ' '		// type 5
 # define PLAYER '_'		// type 6
 # define SPEC	'0'
+# define BALL 'o'
 # define LEFT 1
 # define RIGHT 2
 
@@ -35,7 +37,7 @@ typedef struct s_ball
 	int posx;
 	int posy;
 	int dir;
-};
+}				t_ball;
 
 // MUST HAVE THIS, don't remote it
 typedef struct		s_data
@@ -46,7 +48,9 @@ typedef struct		s_data
 	int				fd_level;
 	int				level;
 	t_case			**map;
+	t_ball			ball;
 	int 			player_pos;
+	int 			run;
 
 	// DEBUGG for dev can be bonus
 	unsigned short int	op_log;
@@ -65,5 +69,7 @@ int		get_level_file(t_data *d);
 int		fill_map(t_data *d);
 int		init_map(t_data *d);
 void 	move(t_data *d, int move);
+int		game(t_data *d);
+int run_the_game(t_data *d);
 
 #endif

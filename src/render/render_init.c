@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmoiroux <jmoiroux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:38:56 by jmoiroux          #+#    #+#             */
-/*   Updated: 2015/05/01 22:38:57 by jmoiroux         ###   ########.fr       */
+/*   Updated: 2015/05/02 00:21:52 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	render_init(t_data *d)
 	}
 	glfwMakeContextCurrent(d->window);
 	glfwSwapInterval(1);
-	glfwSetKeyCallback(d->window, key_callback);
+	glfwSetKeyCallback(d->window, render_keyboard);
 	return (0);
 }

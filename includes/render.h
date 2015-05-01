@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   render.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmoiroux <jmoiroux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:39:58 by jmoiroux          #+#    #+#             */
-/*   Updated: 2015/05/01 22:40:01 by jmoiroux         ###   ########.fr       */
+/*   Updated: 2015/05/02 00:36:04 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RENDER_H
 # define RENDER_H
 
-# include <include/projet.h>
-# include <includes/libft.h>
+# include "projet.h"
+# include "../libft/includes/libft.h"
 
 # define WIN_WIDHT		1250
 # define WIN_HEIGHT		540

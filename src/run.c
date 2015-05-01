@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   run.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/01 20:41:29 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 00:19:18 by vjacquie         ###   ########.fr       */
+/*   Created: 2015/05/02 00:19:28 by vjacquie          #+#    #+#             */
+/*   Updated: 2015/05/02 00:33:25 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/projet.h"
 
-int	main(int ac, char **av)
+int run_the_game(t_data *d)
 {
-	t_data	*d;
-
-	if (init_start(&d, ac, av) < 0)
-		return(error("main:: Initialization error"));
-	if (render_init(d) < 0)
-		return (-1);
-	run_the_game(d);
-	return(0);
+	while (d->run == 0)
+	{
+		glClear(GL_COLOR_BUFFER_BIT);
+		glLoadIdentity();
+		render_draw(d);
+		glfwSwapBuffers(d->window);
+		glLoadIdentity();
+		glfwPollEvents();
+	}
+	render_close(d);
+	return (0);
 }
