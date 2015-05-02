@@ -32,7 +32,7 @@ typedef struct		s_case
 /*
 ** dir value
 **	7	0	1
-
+**
 **	6	-1	2
 **
 **	5	4	3
