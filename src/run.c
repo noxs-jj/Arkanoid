@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/02 00:19:28 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 00:33:25 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 16:01:39 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int run_the_game(t_data *d)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glScalef(0.00155f, 0.00155f, 0.00155f);
 
-
+		game(d);
 		render_draw(d);
 
 		glfwSwapBuffers(d->windows);

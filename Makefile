@@ -2,7 +2,7 @@
 CC = $(CLANG)
 
 # change your includes
-HEADER = includes/HEADER
+HEADER = includes/projet.h
 
 # change binary name
 NAME = Arkanoid
@@ -37,7 +37,7 @@ all: $(NAME)
 $(LIB):
 	make -C libft
 
-%.o: %.c
+%.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -I glfw/include/ -I libft/includes -I includes/ -c $< -o $@
 
 $(NAME): glfw $(LIB) $(OBJS)

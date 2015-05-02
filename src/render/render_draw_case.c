@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_draw_case.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmoiroux <jmoiroux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:59:53 by jmoiroux          #+#    #+#             */
-/*   Updated: 2015/05/01 22:59:54 by jmoiroux         ###   ########.fr       */
+/*   Updated: 2015/05/02 16:05:57 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	render_draw_case(t_data *d, int type, int posx, int posy)
 		glColor3ub(0, 100, 0);
 	else if (type == 15)
 		glColor3ub(0, 255, 255);
+	else if (type == 99)
+		glColor3ub(80, 71, 22);
 	else
 		glColor3ub(255, 255, 255);
 

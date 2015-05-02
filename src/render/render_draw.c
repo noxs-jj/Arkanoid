@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:39:03 by jmoiroux          #+#    #+#             */
-/*   Updated: 2015/05/02 00:22:47 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 16:06:07 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ void render_draw(t_data *d)
 		}
 		y++;
 	}
+	render_draw_case(d, 99, d->ball.posx * BLOCK_WIDTH, d->ball.posy * BLOCK_HEIGHT);
 }
