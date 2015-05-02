@@ -26,7 +26,10 @@ void	render_keyboard(GLFWwindow* window, int key, int scancode,
 	}
 	else if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
 	{
-		// PAUSE
+		if (d->pause == 1)
+			d->pause = 0;
+		else
+			d->pause = 1;
 	}
 	else if ((key == GLFW_KEY_A || key == GLFW_KEY_LEFT)
 		&& (action == GLFW_PRESS || action == GLFW_REPEAT))

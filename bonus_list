@@ -1,4 +1,6 @@
 1. Resize de la fenetre = reize du GUI automatiquement
-2. Ajout de touche pour direction droite gauche et quitter, A, B, Q
-3. Blocks de couleurs differentes selon les points de resistances
-4. Inversion par rapport du plan par rapport a l'original
+
+1. Ajout de touche pour direction droite gauche et quitter, A, B, Q
+2. Blocks de couleurs differentes selon les points de resistances
+3. Inversion par rapport du plan par rapport a l'original
+4. Pause

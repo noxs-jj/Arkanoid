@@ -16,14 +16,22 @@ int run_the_game(t_data *d)
 {
 	while (d->run == 1)
 	{
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glScalef(0.001550f, 0.00350f, 0.001550f);
+		if (d->pause == 0)
+		{
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			glScalef(0.001550f, 0.00350f, 0.001550f);
 
-		game(d);
-		render_draw(d);
+			game(d);
+			render_draw(d);
 
-		glfwSwapBuffers(d->windows);
-		glFlush();
+			glfwSwapBuffers(d->windows);
+			glFlush();
+			usleep(100000);
+		}
+		else {
+			usleep(100000);
+		}
+
 		glfwPollEvents();
 		glLoadIdentity();
 	}
