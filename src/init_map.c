@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:14:04 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 18:51:11 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 21:51:11 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int		init_map(t_data *d)
 	d->map[MAP_Y - 2][d->player_pos + 1].type = PLAYER;
 	d->ball.posx = 25;
 	d->ball.posy = MAP_Y - 3;
-	d->ball.dir = 7;
+	d->ball.dir = 4;
 	return (0);
 }
