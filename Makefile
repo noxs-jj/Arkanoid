@@ -23,12 +23,13 @@ SRCS =	src/main.c \
 		src/render/render_draw_case.c \
 		src/render/render_draw_player.c \
 		src/render/render_init.c \
-		src/render/render_keyboard.c
+		src/render/render_keyboard.c \
+		src/render/render_score.c
 
 # Don'y modify following
 GCC = gcc
 CLANG = clang
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -w
 LIB_GLFW = glfw/src/libglfw3.a
 LIB = libft/libft.a
 OBJS = $(SRCS:.c=.o)
@@ -49,7 +50,7 @@ $(LIB):
 $(NAME):  $(LIB_GLFW) $(LIB) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB_GLFW) $(LIB) \
 	-I glfw/include/ -I libft/ -I includes/ \
-	-L glfw/src/ -lglfw3 \
+	-L glfw/src/ -lglfw3 -framework GLUT \
 	-framework Cocoa -framework OpenGL \
 	-framework IOKit -framework CoreVideo
 

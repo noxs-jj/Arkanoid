@@ -84,5 +84,6 @@ void				render_keyboard(GLFWwindow* window, int key, int scancode, int action, i
 void				render_close(t_data *d);
 void				render_draw_case(t_data *d, int life, int posx, int posy);
 void				render_draw_player(t_data *d, int posx, int posy);
+void				render_score(t_data *d);
 
 #endif

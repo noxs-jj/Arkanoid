@@ -18,6 +18,7 @@ void render_draw(t_data *d)
 	int y;
 	int player;
 
+
 	y = 0;
 	player = 0;
 	while (y < MAP_Y)
@@ -43,4 +44,5 @@ void render_draw(t_data *d)
 		y++;
 	}
 	render_draw_case(d, 99, d->ball.posx * BLOCK_WIDTH, d->ball.posy * BLOCK_HEIGHT);
+	render_score(d);
 }
