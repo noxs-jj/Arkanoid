@@ -74,7 +74,7 @@ int					init_map(t_data *d);
 void 				move(t_data *d, int move);
 void				game(t_data *d);
 int 				run_the_game(t_data *d);
-
+void				exit_free(void);
 /*
 ** Render glfw
 */

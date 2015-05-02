@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 22:27:24 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 16:36:14 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 19:47:12 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ static int	fill_map2(t_data *d, char *line, int x, int y)
 		d->map[y][x].type = EMPTY;
 	else
 		return (-1);
-	if ((x == 0 || x == MAP_X -1 || y == 0 || y == MAP_Y - 1)
+	if ((x == 0 || x == MAP_X - 1 || y == 0 || y == MAP_Y - 1)
 		&& line[x] != WALL)
 		return (-1);
 	return (x + 1);
 }
 
-int		fill_map(t_data *d)
+int			fill_map(t_data *d)
 {
 	char	*line;
 	int		x;
@@ -57,9 +57,9 @@ int		fill_map(t_data *d)
 		while (x < MAP_X)
 		{
 			if ((x = fill_map2(d, line, x, y)) < 0)
-				return (-1);	
+				return (-1);
 		}
-		if (line [x] != '\0')
+		if (line[x] != '\0')
 			return (-1);
 		ft_memdel((void **)&line);
 		y++;

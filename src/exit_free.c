@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_level_file.c                                   :+:      :+:    :+:   */
+/*   exit_free.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/01 22:30:26 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 19:49:00 by vjacquie         ###   ########.fr       */
+/*   Created: 2015/05/02 19:30:29 by vjacquie          #+#    #+#             */
+/*   Updated: 2015/05/02 19:46:06 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/projet.h"
 
-int		get_level_file(t_data *d)
+void	exit_free(void)
 {
-	if ((d->fd_level = open(d->p_av[1], O_RDONLY)) < 0)
-		return (-1);
-	return (0);
+	t_data	*d;
+	int		y;
+
+	if ((d = get_data()) == NULL)
+		_exit(0);
+	if (d->fd_log > 0)
+		close(d->fd_log);
+	if (d->map != NULL)
+	{
+		y = 0;
+		while (y < MAP_Y && d->map[y] != NULL)
+		{
+			ft_memdel((void **)&d->map[y]);
+			y++;
+		}
+		ft_memdel((void **)&d->map);
+	}
+	_exit(0);
 }

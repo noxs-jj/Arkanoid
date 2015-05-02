@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 23:31:06 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 19:23:03 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 19:48:48 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	do_dmg(t_data *d, int newdir, int posx, int posy)
 	if (d->map[posy][posx].type == SIMPLE)
 	{
 		d->map[posy][posx].type = EMPTY;
-		d->map[posy][posx].state--;	
+		d->map[posy][posx].state--;
 	}
 	else if (d->map[posy][posx].type == SPEC)
 	{
@@ -28,7 +28,7 @@ static void	do_dmg(t_data *d, int newdir, int posx, int posy)
 	d->ball.dir = newdir;
 }
 
-int		adv_move(t_data *d, int side)
+int			adv_move(t_data *d, int side)
 {
 	if (side == 0)
 	{
@@ -54,10 +54,10 @@ int		adv_move(t_data *d, int side)
 	}
 	else if (side == 3 || side == 5)
 		return (-1);
-	else if (side == 4) // Player
+	else if (side == 4)
 	{
 		if (d->map[d->ball.posy + 1][d->ball.posx].type != PLAYER)
-			return (-1); // loose
+			return (-1);
 		if (d->ball.dir == 5)
 			do_dmg(d, 7, d->ball.posx - 1, d->ball.posy + 1);
 		else if (d->ball.dir == 4)
@@ -83,39 +83,39 @@ int		adv_move(t_data *d, int side)
 	return (0);
 }
 
-void	basic_move(t_data *d)
+void		basic_move(t_data *d)
 {
-	if (d->ball.dir == 0) // UP
+	if (d->ball.dir == 0)
 	
 		d->ball.posy--;
-	else if (d->ball.dir == 1) // UP - RIGHT
+	else if (d->ball.dir == 1)
 	{
 		d->ball.posy--;
 		d->ball.posx++;
 	}
-	else if (d->ball.dir == 3) // DOWN - RIGHT
+	else if (d->ball.dir == 3)
 	{
 		d->ball.posy++;
 		d->ball.posx++;
 	}
-	else if (d->ball.dir == 4) // DOWN
+	else if (d->ball.dir == 4)
 		d->ball.posy++;
-	else if (d->ball.dir == 5) // DOWN - LEFT
+	else if (d->ball.dir == 5)
 	{
 		d->ball.posy++;
 		d->ball.posx--;
 	}
-	else if (d->ball.dir == 7) // UP - LEFT
+	else if (d->ball.dir == 7)
 	{
 		d->ball.posy--;
 		d->ball.posx--;
 	}
 }
 
-int		collide(t_data *d)
+int			collide(t_data *d)
 {
-	int side;
-	int ret;
+	int		side;
+	int		ret;
 
 	side = -1;
 	ret = 99;
@@ -148,7 +148,7 @@ int		collide(t_data *d)
 
 void		game(t_data *d)
 {
-	int ret;
+	int		ret;
 
 	ret = collide(d);
 	if (ret == 99)
