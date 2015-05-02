@@ -13,7 +13,8 @@
 #include <projet.h>
 #include <glut/glut.h>
 
-static void	print_str(char * word) {
+static void	print_str(char *word)
+{
 	int		len;
 	int		i;
 

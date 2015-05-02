@@ -12,7 +12,7 @@
 
 #include <projet.h>
 
-void	render_keyboard(GLFWwindow* window, int key, int scancode,
+void	render_keyboard(GLFWwindow *window, int key, int scancode,
 						int action, int mods)
 {
 	static t_data	*d = NULL;

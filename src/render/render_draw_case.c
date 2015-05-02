@@ -12,7 +12,22 @@
 
 #include <projet.h>
 
-void	render_draw_case(t_data *d, int type, int posx, int posy)
+static void	render_draw_case_2(t_data *d, int type, int posx, int posy)
+{
+	glBegin(GL_QUADS);
+	glVertex2f(posx - (WIN_WIDHT / 2),
+			posy - (WIN_HEIGHT / 2));
+	glVertex2f(posx - (WIN_WIDHT / 2),
+			posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2));
+	glVertex2f(posx + BLOCK_WIDTH - (WIN_WIDHT / 2),
+			posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2));
+	glVertex2f(posx + BLOCK_WIDTH - (WIN_WIDHT / 2),
+			posy - (WIN_HEIGHT / 2));
+	glEnd();
+	(void)d;
+}
+
+void		render_draw_case(t_data *d, int type, int posx, int posy)
 {
 	if (type == 0)
 		glColor3ub(50, 50, 50);
@@ -32,11 +47,5 @@ void	render_draw_case(t_data *d, int type, int posx, int posy)
 		glColor3ub(80, 71, 22);
 	else
 		glColor3ub(150, 150, 150);
-	glBegin(GL_QUADS);
-		glVertex2f(posx - (WIN_WIDHT / 2), posy - (WIN_HEIGHT / 2)); // bas gauche
-		glVertex2f(posx - (WIN_WIDHT / 2), posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2)); // haut gauche
-		glVertex2f(posx + BLOCK_WIDTH - (WIN_WIDHT / 2), posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2)); // haut droite
-		glVertex2f(posx + BLOCK_WIDTH - (WIN_WIDHT / 2), posy - (WIN_HEIGHT / 2)); // bas droite
-	glEnd();
-	(void)d;
+	render_draw_case_2(d, type, posx, posy);
 }
