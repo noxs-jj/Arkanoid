@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 20:41:29 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 00:19:09 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 20:50:38 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	init_start(t_data **d, int ac, char **av)
 	(*d)->run = 1;
 	(*d)->player_pos = 25;
 	(*d)->p_av = av;
+	(*d)->score = 0;
 	if (init_map(*d) < 0)
 		return (error("init_start:: Init_map error"));
 	return (0);

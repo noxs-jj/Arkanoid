@@ -17,6 +17,7 @@ SRCS =	src/main.c \
 		src/move.c \
 		src/game.c \
 		src/run.c \
+		src/collide.c \
 		src/exit_free.c \
 		src/render/render_close.c \
 		src/render/render_draw.c \

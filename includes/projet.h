@@ -57,6 +57,7 @@ typedef struct		s_data
 	int 			player_pos;
 	int 			run;
 	int 			pause;
+	int				score;
 
 	unsigned short int	op_log;
 	GLFWwindow		*windows;
@@ -75,6 +76,7 @@ void 				move(t_data *d, int move);
 void				game(t_data *d);
 int 				run_the_game(t_data *d);
 void				exit_free(void);
+int					collide(t_data *d);
 /*
 ** Render glfw
 */
