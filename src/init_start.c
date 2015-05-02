@@ -14,8 +14,8 @@
 
 int	init_start(t_data **d, int ac, char **av)
 {
-	if (ac < 2)
-		return (error("init_start:: Require 2 args minimum"));
+	if (ac != 2)
+		return (error("init_start:: Require 1 arg"));
 	*d = get_data();
 	if (NULL == d)
 		return (error("init_start:: t_data init is NULL, malloc failed"));
