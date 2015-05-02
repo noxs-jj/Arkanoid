@@ -11,8 +11,8 @@
 # define WIN_WIDHT		1250
 # define WIN_HEIGHT		540
 
-# define BLOCK_WIDTH	25
-# define BLOCK_HEIGHT	12
+# define BLOCK_WIDTH	25 // 25
+# define BLOCK_HEIGHT	10 // 12
 
 # define WALL '#'		// type 1
 # define SIMPLE '-'		// type 2
