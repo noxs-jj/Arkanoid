@@ -75,7 +75,7 @@ int		get_level_file(t_data *d);
 int		fill_map(t_data *d);
 int		init_map(t_data *d);
 void 	move(t_data *d, int move);
-int		game(t_data *d);
+void		game(t_data *d);
 int run_the_game(t_data *d);
 
 /*
