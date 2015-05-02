@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/02 21:53:49 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 21:55:37 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 21:57:27 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void		basic_move(t_data *d)
 {
 	if (d->ball.dir == 0)
-	
 		d->ball.posy--;
 	else if (d->ball.dir == 1)
 	{

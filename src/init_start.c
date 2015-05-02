@@ -6,7 +6,7 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 20:41:29 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 21:51:02 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 21:58:07 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	init_start(t_data **d, int ac, char **av)
 {
-	(void)ac;
-	(void)av;
 	if (ac < 2)
-		return(error("init_start:: Require 2 args minimum"));
+		return (error("init_start:: Require 2 args minimum"));
 	*d = get_data();
 	if (NULL == d)
 		return (error("init_start:: t_data init is NULL, malloc failed"));

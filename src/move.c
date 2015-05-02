@@ -6,13 +6,13 @@
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/01 23:31:06 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 16:40:30 by vjacquie         ###   ########.fr       */
+/*   Updated: 2015/05/02 21:58:50 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/projet.h"
 
-void 	move(t_data *d, int move)
+void	move(t_data *d, int move)
 {
 	if (move == LEFT && d->player_pos > 2)
 	{
