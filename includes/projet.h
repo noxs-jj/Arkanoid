@@ -49,6 +49,7 @@ typedef struct		s_data
 {
 
 	int				fd_log;
+	char			**p_av;
 	int				i_args;
 	int				fd_level;
 	int				level;

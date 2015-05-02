@@ -14,13 +14,7 @@
 
 int		get_level_file(t_data *d)
 {
-	// char *tmp;
-
-	// if ((tmp = ft_strnew(8)) == NULL)
-	// 	return (-1);
-	// ft_strcpy(tmp, "level");
-
-	if ((d->fd_level = open("levels/level01.level", O_RDONLY)) < 0)
+	if ((d->fd_level = open(d->p_av[1], O_RDONLY)) < 0)
 		return (-1);
 	return (0);
 }

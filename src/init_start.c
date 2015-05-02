@@ -27,6 +27,7 @@ int	init_start(t_data **d, int ac, char **av)
 	(*d)->fd_level = -1;
 	(*d)->run = 1;
 	(*d)->player_pos = 25;
+	(*d)->p_av = av;
 	if (init_map(*d) < 0)
 		return (error("init_start:: Init_map error"));
 	return (0);

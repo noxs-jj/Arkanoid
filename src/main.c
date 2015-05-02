@@ -16,10 +16,8 @@ int	main(int ac, char **av)
 {
 	t_data	*d;
 
-	if (init_start(&d, ac, av) < 0)
+	if (init_start(&d, ac, av) < 0 || render_init(d) < 0)
 		return(error("main:: Initialization error"));
-	if (render_init(d) < 0)
-		return (-1);
 	run_the_game(d);
 	return(0);
 }
