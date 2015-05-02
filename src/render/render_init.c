@@ -12,13 +12,13 @@
 
 #include <projet.h>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+void	framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
 	glViewport(0, 0, width, height);
 	(void)window;
 }
 
-int	render_init(t_data *d)
+int		render_init(t_data *d)
 {
 	int	width;
 	int	height;

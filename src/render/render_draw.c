@@ -12,7 +12,7 @@
 
 #include <projet.h>
 
-static void render_draw_2(t_data *d, int x, int y)
+static void	render_draw_2(t_data *d, int x, int y)
 {
 	if (d->map[y][x].type == OBSTACLE)
 		render_draw_case(d, 15, x * BLOCK_WIDTH, y * BLOCK_HEIGHT);
@@ -26,7 +26,7 @@ static void render_draw_2(t_data *d, int x, int y)
 		render_draw_player(d, x * BLOCK_WIDTH, y * BLOCK_HEIGHT);
 }
 
-void render_draw(t_data *d)
+void		render_draw(t_data *d)
 {
 	int x;
 	int y;

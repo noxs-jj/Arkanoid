@@ -17,10 +17,14 @@ void	render_draw_player(t_data *d, int posx, int posy)
 	glColor3ub(255, 255, 0);
 
 	glBegin(GL_QUADS);
-		glVertex2f(posx - (WIN_WIDHT / 2), posy - (WIN_HEIGHT / 2)); // bas gauche
-		glVertex2f(posx - (WIN_WIDHT / 2), posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2)); // haut gauche
-		glVertex2f(posx + (BLOCK_WIDTH) - (WIN_WIDHT / 2), posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2)); // haut droite
-		glVertex2f(posx + (BLOCK_WIDTH) - (WIN_WIDHT / 2), posy - (WIN_HEIGHT / 2)); // bas droite
+		glVertex2f(posx - (WIN_WIDHT / 2),
+			posy - (WIN_HEIGHT / 2));
+		glVertex2f(posx - (WIN_WIDHT / 2),
+			posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2));
+		glVertex2f(posx + (BLOCK_WIDTH) - (WIN_WIDHT / 2),
+			posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2));
+		glVertex2f(posx + (BLOCK_WIDTH) - (WIN_WIDHT / 2),
+			posy - (WIN_HEIGHT / 2));
 	glEnd();
 	(void)d;
 }

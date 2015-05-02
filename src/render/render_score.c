@@ -13,7 +13,7 @@
 #include <projet.h>
 #include <glut/glut.h>
 
-void print_str(char * word) {
+static void	print_str(char * word) {
 	int		len;
 	int		i;
 
@@ -26,7 +26,7 @@ void print_str(char * word) {
 	}
 }
 
-void	render_score(t_data *d)
+void		render_score(t_data *d)
 {
 	char	*tmp;
 

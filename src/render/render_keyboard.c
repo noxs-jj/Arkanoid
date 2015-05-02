@@ -33,14 +33,10 @@ void	render_keyboard(GLFWwindow* window, int key, int scancode,
 	}
 	else if ((key == GLFW_KEY_A || key == GLFW_KEY_LEFT)
 		&& (action == GLFW_PRESS || action == GLFW_REPEAT))
-	{
 		move(d, LEFT);
-	}
 	else if ((key == GLFW_KEY_D || key == GLFW_KEY_RIGHT)
 		&& (action == GLFW_PRESS || action == GLFW_REPEAT))
-	{
 		move(d, RIGHT);
-	}
 	(void)scancode;
 	(void)mods;
 }
