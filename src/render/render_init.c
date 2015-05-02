@@ -12,16 +12,24 @@
 
 #include <projet.h>
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+	(void)window;
+}
+
 int	render_init(t_data *d)
 {
+	int	width;
+	int	height;
+
 	if (!glfwInit())
 	{
 		w_log("render_init:: glfwInit error");
 		return (-1);
 	}
 	d->windows = glfwCreateWindow(WIN_WIDHT, WIN_HEIGHT,
-				"Arkanoid jmoiroux & vjacquie",
-				NULL, NULL);
+				"Arkanoid jmoiroux & vjacquie", NULL, NULL);
 	if (!d->windows)
 	{
 		w_log("render_init:: glfwCreateWindow error");
@@ -31,5 +39,8 @@ int	render_init(t_data *d)
 	glfwMakeContextCurrent(d->windows);
 	glfwSwapInterval(1);
 	glfwSetKeyCallback(d->windows, render_keyboard);
+	glfwGetFramebufferSize(d->windows, &width, &height);
+	glViewport(0, 0, width, height);
+	glfwSetFramebufferSizeCallback(d->windows, framebuffer_size_callback);
 	return (0);
 }

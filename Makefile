@@ -32,7 +32,7 @@ CFLAGS = -Wall -Werror -Wextra
 LIB = libft/libft.a
 OBJS = $(SRCS:.c=.o)
 
-all: glfw $(NAME)
+all: $(NAME)
 
 $(LIB):
 	make -C libft
@@ -40,16 +40,15 @@ $(LIB):
 %.o: %.c
 	@$(CC) $(CFLAGS) -I glfw/include/ -I libft/includes -I includes/ -c $< -o $@
 
-$(NAME): $(LIB) $(OBJS)
+$(NAME): glfw $(LIB) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB) \
 	-I glfw/include/ -I libft/ -I includes/ \
-	-L glfw/src/ -lglfw \
-	 -framework Cocoa -framework OpenGL \
+	-L glfw/src/ \
+	-lglfw3 -framework Cocoa -framework OpenGL \
 	-framework IOKit -framework CoreVideo
 
 glfw:
-	git submodule add --force https://github.com/glfw/glfw.git
-	$(shell cd glfw && cmake . && make)
+	sh install.sh
 
 rend:
 	$(CC) $(CFLAGS) src/render/main_test.c libft/libft.a \
