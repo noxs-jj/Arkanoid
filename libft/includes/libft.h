@@ -22,6 +22,7 @@
 # include <sys/resource.h>
 # include <sys/types.h>
 # include <sys/wait.h>
+# include <sys/stat.h>
 # include <time.h>
 # include <unistd.h>
 # include "get_next_line.h"

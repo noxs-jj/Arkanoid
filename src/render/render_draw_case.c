@@ -25,6 +25,7 @@ static void	render_draw_case_2(t_data *d, int type, int posx, int posy)
 			posy - (WIN_HEIGHT / 2));
 	glEnd();
 	(void)d;
+	(void)type;
 }
 
 void		render_draw_case(t_data *d, int type, int posx, int posy)

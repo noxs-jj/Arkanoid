@@ -14,7 +14,18 @@
 
 int		get_level_file(t_data *d)
 {
-	if ((d->fd_level = open(d->p_av[1], O_RDONLY)) < 0)
+	struct stat type;
+
+	stat(d->p_av[1], &type);
+	if (S_ISDIR(type.st_mode))
+	{
+		ft_putendl_fd("Wrong File Format", 2);
 		return (-1);
+	}
+	if ((d->fd_level = open(d->p_av[1], O_RDONLY)) < 0)
+	{
+		ft_putendl_fd("Failed Opening level", 2);
+		return (-1);
+	}
 	return (0);
 }
