@@ -19,19 +19,15 @@ int run_the_game(t_data *d)
 		if (d->pause == 0)
 		{
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			glScalef(0.001550f, 0.00350f, 0.001550f);
-
+			glScalef(0.001550f, 0.00350f, 0);
 			game(d);
 			render_draw(d);
-
 			glfwSwapBuffers(d->windows);
 			glFlush();
-			usleep(100000);
+			usleep(SPEED);
 		}
-		else {
+		else
 			usleep(100000);
-		}
-
 		glfwPollEvents();
 		glLoadIdentity();
 	}
