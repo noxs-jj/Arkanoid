@@ -48,7 +48,7 @@ $(NAME): $(LIB) glfw $(OBJS)
 	-framework IOKit -framework CoreVideo
 
 glfw:
-	sh install.sh
+	$(shell cd glfw && cmake . && make)
 
 rend:
 	$(CC) $(CFLAGS) src/render/main_test.c libft/libft.a \
@@ -61,10 +61,6 @@ clean:
 
 fclean: clean
 	make fclean -C libft
-	git submodule deinit -f glfw
-	rm -rf glfw
-	rm -rf .gitmodules
-	git rm --cached -f glfw
 	rm -rf $(NAME)
 
 re: fclean all
