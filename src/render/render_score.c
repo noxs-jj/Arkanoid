@@ -13,32 +13,26 @@
 #include <projet.h>
 #include <glut/glut.h>
 
-void print_vertical_char( float x, float y, char n) {
-	glRasterPos2f(x, y);
-	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, n);
-}
+void print_str(char * word) {
+	int		len;
+	int		i;
 
-void print_str(char const * word) {
-	int len, i;
-	len = (int)ft_strlen(word);
-
-	for (i = 0; i < len; i++) {
+	len = ft_strlen(word);
+	while (i < len)
+	{
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, word[i]);
+		i++;
 	}
 }
 
 void	render_score(t_data *d)
 {
-	(void)d;
-	char *	test = "hello world";
+	char	*tmp;
+
+	tmp = ft_itoa(d->score);
 	glScalef(1, 1, 1);
 	glColor3ub(255, 255, 255);
-	glRasterPos2f(0, 0);
-	print_str(test);
-
+	glRasterPos2f(-0.95f, 0.95f);
+	print_str(tmp);
+	free(tmp);
 }
-
-
-// glFontTextOut
-
-// printw(x, y, z, "char: %c, decimal: %d, float: %f, string: %s", 'X', 1618, 1.618, "text");
