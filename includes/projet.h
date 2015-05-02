@@ -79,6 +79,7 @@ void				game(t_data *d);
 int 				run_the_game(t_data *d);
 void				exit_free(void);
 int					collide(t_data *d);
+int					adv_move(t_data *d, int side);
 /*
 ** Render glfw
 */

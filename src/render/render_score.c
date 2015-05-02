@@ -18,6 +18,7 @@ void print_str(char * word) {
 	int		i;
 
 	len = ft_strlen(word);
+	i = 0;
 	while (i < len)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, word[i]);
