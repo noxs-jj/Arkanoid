@@ -12,7 +12,7 @@
 # define WIN_HEIGHT		540
 
 # define BLOCK_WIDTH	25 // 25
-# define BLOCK_HEIGHT	10 // 12
+# define BLOCK_HEIGHT	12 // 12
 
 # define WALL '#'		// type 1
 # define SIMPLE '-'		// type 2
@@ -24,11 +24,11 @@
 # define LEFT 1
 # define RIGHT 2
 
-typedef struct	s_case
+typedef struct		s_case
 {
-	char		type;
-	int			state;
-}				t_case;
+	char			type;
+	int				state;
+}					t_case;
 /*
 ** dir value
 **	7	0	1
@@ -37,14 +37,13 @@ typedef struct	s_case
 **
 **	5	4	3
 */
-typedef struct s_ball
+typedef struct 		s_ball
 {
-	int posx;
-	int posy;
-	int dir;
-}				t_ball;
+	int 			posx;
+	int 			posy;
+	int 			dir;
+}					t_ball;
 
-// MUST HAVE THIS, don't remote it
 typedef struct		s_data
 {
 
@@ -57,11 +56,9 @@ typedef struct		s_data
 	t_ball			ball;
 	int 			player_pos;
 	int 			run;
+	int 			pause;
 
-	// DEBUGG for dev can be bonus
 	unsigned short int	op_log;
-
-
 	GLFWwindow		*windows;
 }					t_data;
 
@@ -71,22 +68,21 @@ int					open_log(t_data *d);
 t_data				*get_data(void);
 void				w_log(char const *str);
 
-int		get_level_file(t_data *d);
-int		fill_map(t_data *d);
-int		init_map(t_data *d);
-void 	move(t_data *d, int move);
-void		game(t_data *d);
-int run_the_game(t_data *d);
+int					get_level_file(t_data *d);
+int					fill_map(t_data *d);
+int					init_map(t_data *d);
+void 				move(t_data *d, int move);
+void				game(t_data *d);
+int 				run_the_game(t_data *d);
 
 /*
 ** Render glfw
 */
-int		render_init(t_data *d);
-void	render_draw(t_data *d);
-void	render_keyboard(GLFWwindow* window, int key, int scancode, int action, int mods);
-void	render_close(t_data *d);
-void	render_draw_wall(t_data *d);
-void	render_draw_case(t_data *d, int life, int posx, int posy);
-void	render_draw_player(t_data *d, int posx, int posy);
+int					render_init(t_data *d);
+void				render_draw(t_data *d);
+void				render_keyboard(GLFWwindow* window, int key, int scancode, int action, int mods);
+void				render_close(t_data *d);
+void				render_draw_case(t_data *d, int life, int posx, int posy);
+void				render_draw_player(t_data *d, int posx, int posy);
 
 #endif

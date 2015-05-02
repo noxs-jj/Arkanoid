@@ -21,7 +21,6 @@ SRCS =	src/main.c \
 		src/render/render_draw.c \
 		src/render/render_draw_case.c \
 		src/render/render_draw_player.c \
-		src/render/render_draw_wall.c \
 		src/render/render_init.c \
 		src/render/render_keyboard.c
 

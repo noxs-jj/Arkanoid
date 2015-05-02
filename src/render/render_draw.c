@@ -18,7 +18,6 @@ void render_draw(t_data *d)
 	int y;
 	int player;
 
-	render_draw_wall(d);
 	y = 0;
 	player = 0;
 	while (y < MAP_Y)
@@ -32,6 +31,8 @@ void render_draw(t_data *d)
 				render_draw_case(d, 0, x * BLOCK_WIDTH, y * BLOCK_HEIGHT);
 			else if (d->map[y][x].type == SPEC)
 				render_draw_case(d, d->map[y][x].state, x * BLOCK_WIDTH, y * BLOCK_HEIGHT);
+			else if (d->map[y][x].type == EMPTY)
+				render_draw_case(d, 80, x * BLOCK_WIDTH, y * BLOCK_HEIGHT);
 			else if (d->map[y][x].type == PLAYER)
 			{
 				render_draw_player(d, x * BLOCK_WIDTH, y * BLOCK_HEIGHT);

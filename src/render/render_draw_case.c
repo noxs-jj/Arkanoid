@@ -31,16 +31,12 @@ void	render_draw_case(t_data *d, int type, int posx, int posy)
 	else if (type == 99)
 		glColor3ub(80, 71, 22);
 	else
-		glColor3ub(255, 255, 255);
-
+		glColor3ub(150, 150, 150);
 	glBegin(GL_QUADS);
-
-
 		glVertex2f(posx - (WIN_WIDHT / 2), posy - (WIN_HEIGHT / 2)); // bas gauche
 		glVertex2f(posx - (WIN_WIDHT / 2), posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2)); // haut gauche
 		glVertex2f(posx + BLOCK_WIDTH - (WIN_WIDHT / 2), posy + BLOCK_HEIGHT - (WIN_HEIGHT / 2)); // haut droite
 		glVertex2f(posx + BLOCK_WIDTH - (WIN_WIDHT / 2), posy - (WIN_HEIGHT / 2)); // bas droite
-
 	glEnd();
 	(void)d;
 }

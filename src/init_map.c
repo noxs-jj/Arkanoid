@@ -32,6 +32,6 @@ int		init_map(t_data *d)
 	d->map[MAP_Y - 2][d->player_pos + 1].type = PLAYER;
 	d->ball.posx = 25;
 	d->ball.posy = MAP_Y - 3;
-	d->ball.dir = 0;
+	d->ball.dir = 7;
 	return (0);
 }

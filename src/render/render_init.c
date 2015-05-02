@@ -42,5 +42,7 @@ int	render_init(t_data *d)
 	glfwGetFramebufferSize(d->windows, &width, &height);
 	glViewport(0, 0, width, height);
 	glfwSetFramebufferSizeCallback(d->windows, framebuffer_size_callback);
+	glClearColor(0.1f, 0.1f, 0.1f, 1);
+	glLoadIdentity();
 	return (0);
 }
