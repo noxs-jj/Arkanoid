@@ -30,7 +30,7 @@ SRCS =	src/main.c \
 # Don'y modify following
 GCC = gcc
 CLANG = clang
-CFLAGS = -Wall -Werror -Wextra -w -pedantic -o3
+CFLAGS = -Wall -Werror -Wextra -pedantic -o3
 LIB_GLFW = glfw/src/libglfw3.a
 LIB = libft/libft.a
 OBJS = $(SRCS:.c=.o)
@@ -39,7 +39,7 @@ all: $(NAME)
 
 $(LIB_GLFW):
 	@echo "\t\tGLFW install START"
-	git submodule init && git submodule update && cd glfw && cmake . && make
+	@git submodule init && git submodule update && cd glfw && cmake . && make
 	@echo "\t\tGLFW install DONE"
 
 $(LIB):
@@ -53,11 +53,7 @@ $(NAME):  $(LIB_GLFW) $(LIB) $(OBJS)
 	-I glfw/include/ -I libft/ -I includes/ \
 	-L glfw/src/ -lglfw3 \
 	-framework Cocoa -framework OpenGL \
-	-framework IOKit -framework GLUT -framework CoreVideo
-
-glfw:
-	git submodule init && git submodule update
-	$(shell cd glfw && cmake . && make)
+	-framework IOKit -framework GLUT -w -framework CoreVideo
 
 clean:
 	make clean -C libft
