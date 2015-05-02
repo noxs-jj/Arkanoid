@@ -4,9 +4,11 @@
 # include "../glfw/include/GLFW/glfw3.h"
 # include "../libft/includes/libft.h"
 
-# define LOG_PATH	"logs/debugg.log"
-# define MAP_X 50
-# define MAP_Y 45
+# define LOG_PATH		"logs/debugg.log"
+# define SPEED			70000
+
+# define MAP_X 			50
+# define MAP_Y 			45
 
 # define WIN_WIDHT		1250
 # define WIN_HEIGHT		540
@@ -14,15 +16,15 @@
 # define BLOCK_WIDTH	25 // 25
 # define BLOCK_HEIGHT	12 // 12
 
-# define WALL '#'		// type 1
-# define SIMPLE '-'		// type 2
-# define OBSTACLE '@'	// type 3
-# define EMPTY ' '		// type 5
-# define PLAYER '_'		// type 6
-# define SPEC	'0'
-# define BALL 'o'
-# define LEFT 1
-# define RIGHT 2
+# define WALL 			'#'		// type 1
+# define SIMPLE 		'-'		// type 2
+# define OBSTACLE 		'@'	// type 3
+# define EMPTY 			' '		// type 5
+# define PLAYER 		'_'		// type 6
+# define SPEC			'0'
+# define BALL 			'o'
+# define LEFT 			1
+# define RIGHT 			2
 
 typedef struct		s_case
 {
