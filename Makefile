@@ -29,10 +29,16 @@ SRCS =	src/main.c \
 GCC = gcc
 CLANG = clang
 CFLAGS = -Wall -Werror -Wextra
+LIB_GLFW = glfw/src/libglfw3.a
 LIB = libft/libft.a
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
+
+$(LIB_GLFW):
+	@echo "\t\tGLFW install START"
+	git submodule init && git submodule update && cd glfw && cmake . && make
+	@echo "\t\tGLFW install DONE"
 
 $(LIB):
 	make -C libft
@@ -40,15 +46,16 @@ $(LIB):
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -I glfw/include/ -I libft/includes -I includes/ -c $< -o $@
 
-$(NAME): glfw $(LIB) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB) \
+$(NAME):  $(LIB_GLFW) $(LIB) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB_GLFW) $(LIB) \
 	-I glfw/include/ -I libft/ -I includes/ \
-	-L glfw/src/ \
-	-lglfw3 -framework Cocoa -framework OpenGL \
+	-L glfw/src/ -lglfw3 \
+	-framework Cocoa -framework OpenGL \
 	-framework IOKit -framework CoreVideo
 
 glfw:
-	sh install.sh
+	git submodule init && git submodule update
+	$(shell cd glfw && cmake . && make)
 
 rend:
 	$(CC) $(CFLAGS) src/render/main_test.c libft/libft.a \
@@ -62,6 +69,9 @@ clean:
 fclean: clean
 	make fclean -C libft
 	rm -rf $(NAME)
+
+gclean:
+	git submodule deinit -f glfw
 
 re: fclean all
 
