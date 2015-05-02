@@ -15,6 +15,9 @@ SRCS =	src/main.c \
 		src/fill_map.c \
 		src/get_level_file.c \
 		src/move.c \
+		src/basic_move.c \
+		src/do_dmg.c \
+		src/adv_move.c \
 		src/game.c \
 		src/run.c \
 		src/collide.c \

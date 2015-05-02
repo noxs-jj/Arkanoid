@@ -1,24 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.c                                             :+:      :+:    :+:   */
+/*   basic_move.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/01 23:31:06 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 21:55:40 by vjacquie         ###   ########.fr       */
+/*   Created: 2015/05/02 21:53:49 by vjacquie          #+#    #+#             */
+/*   Updated: 2015/05/02 21:55:37 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/projet.h"
 
-void		game(t_data *d)
+void		basic_move(t_data *d)
 {
-	int		ret;
-
-	ret = collide(d);
-	if (ret == 99)
-		basic_move(d);
-	if (ret < 0)
-		d->run = 0;
+	if (d->ball.dir == 0)
+	
+		d->ball.posy--;
+	else if (d->ball.dir == 1)
+	{
+		d->ball.posy--;
+		d->ball.posx++;
+	}
+	else if (d->ball.dir == 3)
+	{
+		d->ball.posy++;
+		d->ball.posx++;
+	}
+	else if (d->ball.dir == 4)
+		d->ball.posy++;
+	else if (d->ball.dir == 5)
+	{
+		d->ball.posy++;
+		d->ball.posx--;
+	}
+	else if (d->ball.dir == 7)
+	{
+		d->ball.posy--;
+		d->ball.posx--;
+	}
+	d->score += 1;
 }

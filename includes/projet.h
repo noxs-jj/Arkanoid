@@ -80,6 +80,9 @@ int 				run_the_game(t_data *d);
 void				exit_free(void);
 int					collide(t_data *d);
 int					adv_move(t_data *d, int side);
+void				do_dmg(t_data *d, int newdir, int posx, int posy);
+void				basic_move(t_data *d);
+
 /*
 ** Render glfw
 */

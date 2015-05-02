@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.c                                             :+:      :+:    :+:   */
+/*   do_dmg.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacquie <vjacquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/01 23:31:06 by vjacquie          #+#    #+#             */
-/*   Updated: 2015/05/02 21:55:40 by vjacquie         ###   ########.fr       */
+/*   Created: 2015/05/02 21:53:49 by vjacquie          #+#    #+#             */
+/*   Updated: 2015/05/02 21:54:23 by vjacquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/projet.h"
 
-void		game(t_data *d)
+void	do_dmg(t_data *d, int newdir, int posx, int posy)
 {
-	int		ret;
-
-	ret = collide(d);
-	if (ret == 99)
-		basic_move(d);
-	if (ret < 0)
-		d->run = 0;
+	if (d->map[posy][posx].type == SIMPLE)
+	{
+		d->map[posy][posx].type = EMPTY;
+		d->map[posy][posx].state--;
+	}
+	else if (d->map[posy][posx].type == SPEC)
+	{
+		d->map[posy][posx].state--;
+		if (d->map[posy][posx].state <= 0)
+			d->map[posy][posx].type = EMPTY;
+	}
+	d->ball.dir = newdir;
+	d->score += 100;
 }
