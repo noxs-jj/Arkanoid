@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <render.h>
+#include <projet.h>
 
 void	render_draw_player(t_data *d, int posx, int posy)
 {
@@ -23,4 +22,5 @@ void	render_draw_player(t_data *d, int posx, int posy)
 		glVertex2i(posx + (BLOCK_WIDTH * 3), posy + BLOCK_HEIGHT);
 		glVertex2i(posx, posy + BLOCK_HEIGHT);
 	glEnd();
+	(void)d;
 }

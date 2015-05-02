@@ -10,13 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <render.h>
+#include <projet.h>
 
 void	render_keyboard(GLFWwindow* window, int key, int scancode,
 						int action, int mods)
 {
-	if ((key == GLFW_KEY_ESCAPE || GLFW_KEY_Q) && action == GLFW_PRESS)
+	static t_data	*d = NULL;
+
+	if (d == NULL)
+		d = get_data();
+	if ((key == GLFW_KEY_ESCAPE || key == GLFW_KEY_Q) && action == GLFW_PRESS)
+	{
 		glfwSetWindowShouldClose(window, GL_TRUE);
+		d->run = 0;
+	}
 	else if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
 	{
 		// PAUSE

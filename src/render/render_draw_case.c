@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <render.h>
+#include <projet.h>
 
-void	render_draw_case(t_data *d, int life, int posx, int posy)
+void	render_draw_case(t_data *d, int type, int posx, int posy)
 {
 	if (type == 0)
 		glColor3ub(137, 0, 237);
@@ -36,4 +36,5 @@ void	render_draw_case(t_data *d, int life, int posx, int posy)
 		glVertex2i(posx + BLOCK_WIDTH, posy + BLOCK_HEIGHT);
 		glVertex2i(posx, posy + BLOCK_HEIGHT);
 	glEnd();
+	(void)d;
 }

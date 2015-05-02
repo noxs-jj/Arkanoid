@@ -9,21 +9,21 @@ NAME = Arkanoid
 
 # add sources files
 SRCS =	src/main.c \
-	src/basic_functions.c \
-	src/init_start.c \
-	src/init_map.c \
-	src/fill_map.c \
-	src/get_level_file.c \
-	src/move.c \
-	src/game.c \
-	src/run.c \
-	src/render/render_close.c \
-	src/render/render_draw.c \
-	src/render/render_draw_case.c \
-	src/render/render_draw_player.c \
-	src/render/render_draw_wall.c \
-	src/render/render_init_.c \
-	src/render/render_keyboard.c
+		src/basic_functions.c \
+		src/init_start.c \
+		src/init_map.c \
+		src/fill_map.c \
+		src/get_level_file.c \
+		src/move.c \
+		src/game.c \
+		src/run.c \
+		src/render/render_close.c \
+		src/render/render_draw.c \
+		src/render/render_draw_case.c \
+		src/render/render_draw_player.c \
+		src/render/render_draw_wall.c \
+		src/render/render_init.c \
+		src/render/render_keyboard.c
 
 # Don'y modify following
 GCC = gcc
@@ -37,7 +37,7 @@ all: $(NAME)
 $(LIB):
 	make -C libft
 
-%.o: %.c $(HEADER)
+%.o: %.c
 	@$(CC) $(CFLAGS) -I glfw/include/ -I libft/includes -I includes/ -c $< -o $@
 
 $(NAME): $(LIB) glfw $(OBJS)

@@ -14,12 +14,12 @@
 
 int run_the_game(t_data *d)
 {
-	while (d->run == 0)
+	while (d->run == 1)
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 		glLoadIdentity();
 		render_draw(d);
-		glfwSwapBuffers(d->window);
+		glfwSwapBuffers(d->windows);
 		glLoadIdentity();
 		glfwPollEvents();
 	}

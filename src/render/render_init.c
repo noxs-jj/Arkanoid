@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <render.h>
+#include <projet.h>
 
 int	render_init(t_data *d)
 {
@@ -19,17 +19,17 @@ int	render_init(t_data *d)
 		w_log("render_init:: glfwInit error");
 		return (-1);
 	}
-	d->window = glfwCreateWindow(WIN_WIDHT, WIN_HEIGHT,
+	d->windows = glfwCreateWindow(WIN_WIDHT, WIN_HEIGHT,
 				"Arkanoid jmoiroux & vjacquie",
 				NULL, NULL);
-	if (!d->window)
+	if (!d->windows)
 	{
 		w_log("render_init:: glfwCreateWindow error");
 		glfwTerminate();
 		return (-1);
 	}
-	glfwMakeContextCurrent(d->window);
+	glfwMakeContextCurrent(d->windows);
 	glfwSwapInterval(1);
-	glfwSetKeyCallback(d->window, render_keyboard);
+	glfwSetKeyCallback(d->windows, render_keyboard);
 	return (0);
 }

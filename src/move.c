@@ -17,13 +17,13 @@ void 	move(t_data *d, int move)
 	if (move == LEFT && d->player_pos > 2)
 	{
 		d->map[MAP_Y - 1][d->player_pos + 1].type = EMPTY;
-		d->player->pos--;
+		//d->player->pos--;
 		d->map[MAP_Y - 1][d->player_pos - 1].type = PLAYER;
 	}
 	else if (move == RIGHT && d->player_pos < MAP_X - 2)
 	{
 		d->map[MAP_Y - 1][d->player_pos - 1].type = EMPTY;
-		d->player->pos++;
+		//d->player->pos++;
 		d->map[MAP_Y - 1][d->player_pos + 1].type = PLAYER;
 	}
 }

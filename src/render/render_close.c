@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <render.h>
+#include <projet.h>
 
 void	render_close(t_data *d)
 {
-	glfwDestroyWindow(window);
+	glfwDestroyWindow(d->windows);
 	glfwTerminate();
 	w_log("render_close:: Success");
 }

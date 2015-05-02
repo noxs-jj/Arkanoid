@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <render.h>
+#include <projet.h>
 
-void	render_draw_wall(t_data *d, int posx, int posy)
+void	render_draw_wall(t_data *d)
 {
 	glColor3ub(50, 50, 50);
 
@@ -22,4 +22,5 @@ void	render_draw_wall(t_data *d, int posx, int posy)
 		glVertex2i(WIN_WIDHT, 0);
 		glVertex2i(0, WIN_HEIGHT);
 	glEnd();
+	(void)d;
 }

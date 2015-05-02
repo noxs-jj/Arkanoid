@@ -30,4 +30,5 @@ int		game(t_data *d)
 		;
 	// else // UP - LEFT
 		// ;
+	return (0);
 }
